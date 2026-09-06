@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
 
   def new
-  @list = List.new 
+    @list = List.new 
   end
 
   def create
@@ -9,6 +9,11 @@ class ListsController < ApplicationController
     list.save
     redirect_to '/top'
   end
+
+  def index
+    @lists = List.all
+  end
+  
 
   private
   def list_params
